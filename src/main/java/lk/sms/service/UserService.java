@@ -9,5 +9,5 @@ public interface UserService {
 
     List<User> viewAll();
 
-    User addUser(User user);
+    User Register(User user);
 }

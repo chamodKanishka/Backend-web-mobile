@@ -7,9 +7,12 @@ public class User {
 
     @Id
     private String id;
-    private String userName;
+    private String fName;
+    private String lName;
     private String userEmail;
+    private int cNo;
     private String userPassword;
+
 
     public String getId() {
         return id;
@@ -17,14 +20,6 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getUserEmail() {
@@ -47,9 +42,35 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
                 ", userEmail='" + userEmail + '\'' +
+                ", cNo='" + cNo + '\'' +
                 ", userPassword='" + userPassword + '\'' +
                 '}';
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public int getcNo() {
+        return cNo;
+    }
+
+    public void setcNo(int cNo) {
+        this.cNo = cNo;
     }
 }
