@@ -16,7 +16,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping(value = "/checkUser")
-    public boolean checkUser(@RequestBody User user){
+    public User checkUser(@RequestBody User user){
         return userService.checkUser(user);
     }
 

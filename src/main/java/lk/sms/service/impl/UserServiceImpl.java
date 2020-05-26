@@ -6,6 +6,7 @@ import lk.sms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -15,14 +16,15 @@ public class UserServiceImpl implements UserService { //database implementation{
     private UserRepository userRepository;
 
     @Override
-    public boolean checkUser(User user) {
-        List<User> userList = userRepository.findAll();
-        return false;
+    public User checkUser(User user) {
+        return userRepository.getUser(user.getUserEmail(), user.getUserPassword(), user.getUserRole());
     }
 
     @Override
     public List<User> viewAll() {
-        return userRepository.findAll();
+        List<User> all = userRepository.findAll();
+        Collections.reverse(all);
+        return all;
     }
 
     @Override
