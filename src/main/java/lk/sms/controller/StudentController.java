@@ -1,10 +1,8 @@
 package lk.sms.controller;
 
 import lk.sms.dto.LocalMapDTO;
-import lk.sms.entity.DocUrl;
-import lk.sms.entity.LocalMap;
-import lk.sms.entity.ShuttleTimetable;
-import lk.sms.entity.User;
+import lk.sms.dto.StudentDTO;
+import lk.sms.entity.*;
 import lk.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +30,10 @@ public class StudentController {
     @GetMapping(value = "/shuttles")
     public List<ShuttleTimetable> getShuttles() {
         return studentService.getShuttles();
+    }
+
+    @GetMapping(value = "/student/{email}")
+    public StudentDTO getStudent(@PathVariable String email){
+        return studentService.getStudent(email);
     }
 }

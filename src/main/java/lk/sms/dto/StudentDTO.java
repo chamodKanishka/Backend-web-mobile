@@ -1,30 +1,33 @@
-package lk.sms.entity;
+package lk.sms.dto;
 
+import lk.sms.entity.DocUrl;
+import lk.sms.entity.Faculty;
 
+public class StudentDTO {
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+    public class DocUrl{
+        private lk.sms.entity.DocUrl url;
 
-@Entity
-public class Students {
+        public DocUrl(lk.sms.entity.DocUrl url) {
+            this.url = url;
+        }
 
-    @Id
+        public lk.sms.entity.DocUrl getUrl() {
+            return url;
+        }
+
+        public void setUrl(lk.sms.entity.DocUrl url) {
+            this.url = url;
+        }
+    }
+
     private String sId;
     private String name;
     private String batch;
     private String degree;
     private String email;
-    @ManyToOne
+    private DocUrl docUrl;
     private Faculty faculty;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getsId() {
         return sId;
@@ -32,6 +35,14 @@ public class Students {
 
     public void setsId(String sId) {
         this.sId = sId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBatch() {
@@ -56,6 +67,14 @@ public class Students {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public DocUrl getDocUrl() {
+        return docUrl;
+    }
+
+    public void setDocUrl(DocUrl docUrl) {
+        this.docUrl = docUrl;
     }
 
     public Faculty getFaculty() {

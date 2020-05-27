@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/viewAll")
-    public List<User> checkUser(){
+    public List<User> viewAll(){
         return userService.viewAll();
     }
 }

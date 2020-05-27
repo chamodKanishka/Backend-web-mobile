@@ -1,9 +1,8 @@
 package lk.sms.service;
 
 import lk.sms.dto.LocalMapDTO;
-import lk.sms.entity.DocUrl;
-import lk.sms.entity.LocalMap;
-import lk.sms.entity.ShuttleTimetable;
+import lk.sms.dto.StudentDTO;
+import lk.sms.entity.*;
 
 import java.util.List;
 
@@ -13,4 +12,6 @@ public interface StudentService {
     List<LocalMapDTO> getLocalMaps();
 
     List<ShuttleTimetable> getShuttles();
+
+    StudentDTO getStudent(String email);
 }
